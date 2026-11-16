@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus — Instagram sin reels</title>
+<meta name="description" content="Focus quita los Reels, el Explore y los sugeridos de Instagram sin bloquear la app. Tus mensajes, tus amigos y publicar siguen intactos. Únete a la lista de espera.">
+<meta property="og:title" content="Focus — Instagram sin reels">
+<meta property="og:description" content="Sigues con tus mensajes y tus amigos. El scroll infinito desaparece.">
+<meta property="og:image" content="/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="/focus-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="contenido">
+    <a class="logo" href="/" aria-label="Focus, inicio">
+      <img src="/focus-icon.svg" alt="" width="32" height="32">
+      <span>focus<span class="punto">.</span></span>
+    </a>
+    <a class="boton boton--chico" href="#lista">Unirme</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. HERO -->
+  <section class="hero oscura">
+    <div class="contenido">
+      <div>
+        <h1 class="entrada">Instagram</h1>
+        <p class="subtitulo entrada entrada--2">sin reels<span class="punto">.</span></p>
+
+        <form id="lista" class="formulario entrada entrada--3" name="waitlist" method="POST" action="/gracias" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="waitlist">
+          <p class="oculto-bot" aria-hidden="true">
+            <label>No llenes este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+          <input type="hidden" name="origen" value="">
+
+          <div>
+            <label for="correo">Tu correo</label>
+            <input id="correo" name="correo" type="email" required autocomplete="email" placeholder="tu@correo.com">
+          </div>
+
+          <fieldset>
+            <legend>¿Qué celular usas?</legend>
+            <div class="radios">
+              <label><input type="radio" name="celular" value="iphone" required> iPhone</label>
+              <label><input type="radio" name="celular" value="android" required> Android</label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="horas">¿Cuántas horas de reels ves al día?</label>
+            <select id="horas" name="horas">
+              <option value="menos de 1">Menos de 1</option>
+              <option value="1 a 2">1 a 2</option>
+              <option value="2 a 4">2 a 4</option>
+              <option value="más de 4">Más de 4</option>
+            </select>
+            <p class="calculo" data-calculo aria-live="polite"></p>
+          </div>
+
+          <button class="boton" type="submit">Unirme a la lista</button>
+          <p class="conteo-lista" data-conteo="" hidden>Ya somos <strong>0</strong> esperando.</p>
+        </form>
+      </div>
+
+      <!-- Teléfono dibujado en CSS -->
+      <div class="telefono entrada entrada--4" role="img" aria-label="Un teléfono con reels pasando en swipe infinito, sin final.">
+        <div class="pantalla pantalla--reel">
+          <div class="videos" aria-hidden="true">
+            <div class="video" style="background-image:url('/img/reel1.jpg')">
+              <div class="video-info">
+                <span class="video-user"><img src="/img/avatar1.jpg" alt=""> valen.fit</span>
+                <span class="barra-texto"></span>
+                <span class="barra-texto barra-texto--corta"></span>
+              </div>
+            </div>
+            <div class="video" style="background-image:url('/img/reel2.jpg')">
+              <div class="video-info">
+                <span class="video-user"><img src="/img/avatar2.jpg" alt=""> recetas.ya</span>
+                <span class="barra-texto"></span>
+                <span class="barra-texto barra-texto--corta"></span>
+              </div>
+            </div>
+            <div class="video" style="background-image:url('/img/reel3.jpg')">
+              <div class="video-info">
+                <span class="video-user"><img src="/img/avatar3.jpg" alt=""> viajando.co</span>
+                <span class="barra-texto"></span>
+                <span class="barra-texto barra-texto--corta"></span>
+              </div>
+            </div>
+            <div class="video" style="background-image:url('/img/reel4.jpg')">
+              <div class="video-info">
+                <span class="video-user"><img src="/img/avatar2.jpg" alt=""> gymrat.med</span>
+                <span class="barra-texto"></span>
+                <span class="barra-texto barra-texto--corta"></span>
+              </div>
+            </div>
+            <div class="video" style="background-image:url('/img/reel5.jpg')">
+              <div class="video-info">
+                <span class="video-user"><img src="/img/avatar3.jpg" alt=""> city.nights</span>
+                <span class="barra-texto"></span>
+                <span class="barra-texto barra-texto--corta"></span>
+              </div>
+            </div>
+            <div class="video" style="background-image:url('/img/reel1.jpg')">
+              <div class="video-info">
+                <span class="video-user"><img src="/img/avatar1.jpg" alt=""> valen.fit</span>
+                <span class="barra-texto"></span>
+                <span class="barra-texto barra-texto--corta"></span>
+              </div>
+            </div>
+          </div>
+          <div class="iconos" aria-hidden="true">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.8-10-9.3C.5 8 2.4 4.5 6 4.5c2.2 0 3.6 1.2 6 3.6 2.4-2.4 3.8-3.6 6-3.6 3.6 0 5.5 3.5 4 7.2C19.5 16.2 12 21 12 21z"/></svg></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 1 1-3.1-6.3L21 4l-1 4.3A8 8 0 0 1 21 12z"/></svg></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span>
+          </div>
+          <div class="barra-inferior" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+    <div class="contenido">
+      <ul class="plataformas" aria-label="Redes soportadas">
+        <li class="chip chip--si"><span class="punto-estado" aria-hidden="true"></span> Instagram — primero</li>
+        <li class="chip chip--luego"><span class="punto-estado" aria-hidden="true"></span> YouTube — después</li>
+        <li class="chip chip--no"><span class="punto-estado" aria-hidden="true"></span> TikTok — nunca (es 100% reels)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. EL PROBLEMA -->
+  <section class="clara">
+    <div class="contenido">
+      <h2 data-reveal>Los reels no se sienten como tiempo. Pero lo son.</h2>
+      <div class="numeros">
+        <div data-reveal>
+          <div class="cifra" data-contar="3" data-sufijo=" h">3 h</div>
+          <p>El promedio que se te va en reels al día.</p>
+        </div>
+        <div data-reveal>
+          <div class="cifra" data-contar="45" data-sufijo=" días">45 días</div>
+          <p>Lo que suman al año.</p>
+        </div>
+        <div data-reveal>
+          <div class="cifra" data-contar="0" data-desde="27">0</div>
+          <p>Los reels de ayer que recuerdas.</p>
+        </div>
+      </div>
+      <p class="nota" data-reveal>Cálculo con 3 horas diarias.</p>
+    </div>
+  </section>
+
+  <!-- 4. POR QUÉ BORRAR NO FUNCIONA -->
+  <section class="oscura">
+    <div class="contenido">
+      <div class="dos-columnas">
+        <div>
+          <h2 data-reveal>Borrar Instagram no funciona.</h2>
+          <p class="parrafo-grande" data-reveal>Ya lo intentaste. Dura tres días, porque ahí están tus amigos, tus mensajes y hasta tu trabajo. Volver no es falta de voluntad: es que la necesitas. <strong>El problema no es Instagram. Son los reels.</strong></p>
+        </div>
+        <figure class="grafico" data-reveal>
+          <figcaption class="grafico-titulo">Tu tiempo en el celular, por día</figcaption>
+          <svg viewBox="0 0 360 230" role="img" aria-label="Gráfico ilustrativo: sin Focus el tiempo en pantalla se queda cerca de 3 horas al día; con Focus baja hasta cerca de 40 minutos en la primera semana.">
+            <!-- grid -->
+            <g stroke="#2c2c2c" stroke-width="1">
+              <line x1="36" y1="20"  x2="348" y2="20"/>
+              <line x1="36" y1="80"  x2="348" y2="80"/>
+              <line x1="36" y1="140" x2="348" y2="140"/>
+              <line x1="36" y1="200" x2="348" y2="200"/>
+            </g>
+            <!-- eje y -->
+            <g fill="#8a8a8a" font-size="11" text-anchor="end">
+              <text x="30" y="24">3 h</text>
+              <text x="30" y="84">2 h</text>
+              <text x="30" y="144">1 h</text>
+              <text x="30" y="204">0</text>
+            </g>
+            <!-- eje x -->
+            <g fill="#8a8a8a" font-size="11" text-anchor="middle">
+              <text x="50"  y="222">Lu</text>
+              <text x="92"  y="222">Ma</text>
+              <text x="134" y="222">Mi</text>
+              <text x="176" y="222">Ju</text>
+              <text x="218" y="222">Vi</text>
+              <text x="260" y="222">Sa</text>
+              <text x="302" y="222">Do</text>
+            </g>
+            <!-- sin focus: plana cerca de 3 h -->
+            <polyline points="50,26 92,22 134,28 176,24 218,30 260,22 302,26"
+              fill="none" stroke="#9a9a9a" stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round"/>
+            <text x="308" y="29" fill="#9a9a9a" font-size="11" font-weight="600">sin focus</text>
+            <!-- con focus: baja hasta ~40 min -->
+            <polyline points="50,32 92,74 134,118 176,146 218,154 260,160 302,160"
+              fill="none" stroke="#FF5A1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#FF5A1F">
+              <circle cx="302" cy="160" r="4"/>
+            </g>
+            <text x="308" y="164" fill="#FF5A1F" font-size="11" font-weight="700">con focus</text>
+          </svg>
+          <figcaption class="grafico-nota">Ilustración de una primera semana. Tus reels, tus resultados.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SE VA / SE QUEDA -->
+  <section class="clara">
+    <div class="contenido">
+      <h2 data-reveal>Qué se va y qué se queda</h2>
+      <div class="columnas">
+        <div class="columna" data-reveal>
+          <h3>Se va</h3>
+          <ul>
+            <li><svg class="marca-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg> Reels</li>
+            <li><svg class="marca-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg> Explore</li>
+            <li><svg class="marca-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg> Sugeridos</li>
+            <li><svg class="marca-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg> Scroll infinito</li>
+          </ul>
+        </div>
+        <div class="columna" data-reveal>
+          <h3>Se queda</h3>
+          <ul>
+            <li><svg class="marca-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Mensajes</li>
+            <li><svg class="marca-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Historias de tus amigos</li>
+            <li><svg class="marca-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Perfiles</li>
+            <li><svg class="marca-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Publicar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CÓMO FUNCIONA -->
+  <section class="oscura">
+    <div class="contenido">
+      <h2 data-reveal>Cómo funciona</h2>
+      <div class="pasos">
+        <div class="paso" data-reveal>Descargas Focus</div>
+        <div class="paso" data-reveal>Entras a Instagram desde Focus</div>
+        <div class="paso" data-reveal>Ves lo que quieres ver y sales</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="clara">
+    <div class="contenido">
+      <h2 data-reveal>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details data-reveal>
+          <summary>¿Cuándo sale?</summary>
+          <p class="respuesta">Estamos construyéndola. La lista de espera entra primero.</p>
+        </details>
+        <details data-reveal>
+          <summary>¿Funciona en iPhone y Android?</summary>
+          <p class="respuesta">Empezamos por [iPhone/Android]. Dinos en el formulario cuál usas.</p>
+        </details>
+        <details data-reveal>
+          <summary>¿Bloquea Instagram completo?</summary>
+          <p class="respuesta">No. Solo quita los reels y lo que te mantiene haciendo scroll.</p>
+        </details>
+        <details data-reveal>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="respuesta">Habrá una versión gratis. Los de la lista de espera tendrán [BENEFICIO].</p>
+        </details>
+        <details data-reveal>
+          <summary>¿Ven mis mensajes o mi contraseña?</summary>
+          <p class="respuesta">No guardamos tus mensajes ni tu contraseña.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA FINAL -->
+  <section class="oscura cta-final">
+    <div class="contenido">
+      <p class="tiempo-pagina" data-reveal>Llevas <strong data-tiempo>0:00</strong> en esta página. En reels, ya habrían pasado <strong data-reels>0</strong> videos.</p>
+      <h2 data-reveal>¿Cuántos reels más antes de intentarlo?</h2>
+      <form class="formulario" data-reveal name="waitlist" method="POST" action="/gracias" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="waitlist">
+        <p class="oculto-bot" aria-hidden="true">
+          <label>No llenes este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+        <input type="hidden" name="origen" value="">
+
+        <div>
+          <label for="correo-2">Tu correo</label>
+          <input id="correo-2" name="correo" type="email" required autocomplete="email" placeholder="tu@correo.com">
+        </div>
+
+        <fieldset>
+          <legend>¿Qué celular usas?</legend>
+          <div class="radios">
+            <label><input type="radio" name="celular" value="iphone" required> iPhone</label>
+            <label><input type="radio" name="celular" value="android" required> Android</label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="horas-2">¿Cuántas horas de reels ves al día?</label>
+          <select id="horas-2" name="horas">
+            <option value="menos de 1">Menos de 1</option>
+            <option value="1 a 2">1 a 2</option>
+            <option value="2 a 4">2 a 4</option>
+            <option value="más de 4">Más de 4</option>
+          </select>
+          <p class="calculo" data-calculo aria-live="polite"></p>
+        </div>
+
+        <button class="boton" type="submit">Unirme a la lista</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- 9. FOOTER -->
+<footer>
+  <div class="contenido">
+    <a class="logo" href="/" aria-label="Focus, inicio">
+      <img src="/focus-icon.svg" alt="" width="32" height="32">
+      <span>focus<span class="punto">.</span></span>
+    </a>
+    <span>Hecho en Colombia</span>
+    <nav aria-label="Enlaces del pie de página">
+      <a href="https://instagram.com/[USUARIO]" rel="noopener">Instagram</a>
+      <a href="/privacidad">Privacidad</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/script.js" defer></script>
+</body>
+</html>

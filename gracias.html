@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estás dentro — Focus</title>
+<meta name="description" content="Ya estás en la lista de espera de Focus. Te escribimos apenas esté lista.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/focus-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="oscura">
+
+<header>
+  <div class="contenido">
+    <a class="logo" href="/" aria-label="Focus, inicio">
+      <img src="/focus-icon.svg" alt="" width="32" height="32">
+      <span>focus<span class="punto">.</span></span>
+    </a>
+  </div>
+</header>
+
+<main class="pagina-simple oscura">
+  <div class="contenido">
+    <h1>Estás dentro.</h1>
+    <p>Te escribimos apenas Focus esté lista.</p>
+    <button class="boton" id="compartir" type="button">Compartir con un amigo</button>
+    <p id="copiado" class="aviso-copiado" role="status">Enlace copiado ✓</p>
+    <p style="margin-top:28px; font-size:0.95rem;">Comparte Focus con alguien que vive en los reels.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="contenido">
+    <a class="logo" href="/" aria-label="Focus, inicio">
+      <img src="/focus-icon.svg" alt="" width="32" height="32">
+      <span>focus<span class="punto">.</span></span>
+    </a>
+    <span>Hecho en Colombia</span>
+    <nav aria-label="Enlaces del pie de página">
+      <a href="https://instagram.com/[USUARIO]" rel="noopener">Instagram</a>
+      <a href="/privacidad">Privacidad</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+document.getElementById("compartir").addEventListener("click", async function () {
+  var datos = {
+    title: "Focus — Instagram sin reels",
+    text: "Instagram sin reels. Para alguien que vive en los reels:",
+    url: location.origin + "/?ref=amigo"
+  };
+  if (navigator.share) {
+    try { await navigator.share(datos); } catch (e) { /* canceló, no pasa nada */ }
+  } else {
+    try {
+      await navigator.clipboard.writeText(datos.url);
+      document.getElementById("copiado").classList.add("visible");
+    } catch (e) {
+      prompt("Copia el enlace:", datos.url);
+    }
+  }
+});
+</script>
+</body>
+</html>
